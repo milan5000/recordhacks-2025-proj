@@ -46,7 +46,11 @@ const App = () => {
     console.log(supplyClone)
     const indexToUpdate = supplyClone.findIndex(obj => obj.id === arg)
     if (indexToUpdate !== -1) {
-      supplyClone[indexToUpdate].available = !supplyClone[indexToUpdate].available
+      if (supplyClone[indexToUpdate].available === "no") {
+        supplyClone[indexToUpdate].available = "yes"
+      } else {
+        supplyClone[indexToUpdate].available = "no"
+      }
       console.log(`Toggled ${arg} to ${supplyClone[indexToUpdate].available}`)
     }
     setSupplies(supplyClone)

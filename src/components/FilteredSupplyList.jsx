@@ -54,14 +54,18 @@ const FilteredSupplyList = ({ stage, mode, situParams, supplies, toggleSupplyAva
                     <label class="list_labels">
                         <input class="checkbox_input"
                             type="checkbox" 
-                            checked={supply.available} 
-                            onChange={() => toggleSupplyAvail(supply.id)}
+                            checked={supply.available === "yes"}
+                            onChange={() => {
+                                console.log(supply.available)
+                                toggleSupplyAvail(supply.id)
+                                }
+                            }
                         />
-                        {supply.name} ({supply.available ? "Available" : "Unavailable"})
+                        {supply.name} ({(supply.available === "yes") ? "Available" : "Unavailable"})
                     </label>
                 </div>
                 )}
-                <p>{situParams.disaster_type}</p>
+                {/* <p>{situParams.disaster_type}</p> */}
             </div>
         )
     }
