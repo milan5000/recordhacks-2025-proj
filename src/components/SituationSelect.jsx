@@ -121,6 +121,7 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
                     </label>
                 </div>
             </div>
+        </div>
         );
     } else if (mode === "education") {
         return (
