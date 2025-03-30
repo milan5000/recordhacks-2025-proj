@@ -106,3 +106,28 @@ select, input {
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+.education_div {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    line-height: 1.6;
+    color: #1a202c;
+}
+
+.education_div h3 {
+    color: #2c5282;
+    margin-top: 2rem;
+}
+
+.education_div ul {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.education_div li {
+    margin-bottom: 0.5rem;
+}
