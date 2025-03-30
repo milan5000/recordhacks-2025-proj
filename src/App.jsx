@@ -47,10 +47,10 @@ const App = () => {
   return (
     <div>
       <h1>PackAdvisor</h1>
-      <div>
-        <button onClick={() => {console.log("disaster"); setMode("disaster")}}>Immediate Disaster</button>
-        <button onClick={() => {console.log("prepare"); setMode("prepare")}}>Non-Urgent Preparation</button>
-        <button onClick={() => {console.log("education"); setMode("education")}}>Educational</button>
+      <div class="mode_buttons_div">
+        <button class="mode_button" onClick={() => {console.log("disaster"); setMode("disaster")}}>Immediate Disaster</button>
+        <button class="mode_button" onClick={() => {console.log("prepare"); setMode("prepare")}}>Non-Urgent Preparation</button>
+        <button class="mode_button" onClick={() => {console.log("education"); setMode("education")}}>Educational</button>
       </div>
       <SituationSelect mode={mode} situParams={situParams} editParam={editParam} />
       <FilteredSupplyList mode={mode} situParams={situParams} supplies={supplies} toggleSupplyAvail={toggleSupplyAvail}/>
