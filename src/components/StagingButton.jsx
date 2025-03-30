@@ -4,8 +4,8 @@ const StagingButton = ({ stage, setStage, mode }) => {
     } else if (mode === "disaster") {
         if (stage === "user_setup") {
             return <button class="generate_button" onClick={() => setStage("checklist")}>Generate Personalized Supply List</button>
-        } else {
-            return null
+        } else if (stage === "checklist") {
+            return <button class="generate_button" onClick={() => setStage("user_setup")}>Go Back to Setup</button>
         }
     } else {
         return null
