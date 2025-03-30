@@ -7,6 +7,8 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
                 <p>The impostor is {situParams.amogus}!</p>
                 <button onClick={() => editParam("amogus", "not sus")}>click to make the impostor not sus</button>
                 <button onClick={() => editParam("amogus", "sus")}>click to make the impostor sus</button>
+                <button onClick={() => editParam("disaster_type", "hurricane_flood")}>click incase hurricane</button>
+                <button onClick={() => editParam("disaster_type", "wildfire")}>click incase wildfire</button>
             </div>
         )
     } else if (mode === "prepare") {
