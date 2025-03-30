@@ -11,7 +11,7 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
 
     return (
         <div class="immediate_div">
-            <h3 calss="emergency_header">🌪️ Emergency Situation</h3>
+            <h3 class="immediate_subheader">🌪️ Emergency Situation</h3>
             <label>
                 Type of Natural Disaster:
                 <select value={situParams.disaster_type} onChange={(e) => editParam("disaster_type", e.target.value)}>
@@ -40,7 +40,7 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
             </label>
             <br />
 
-            <h4>👪 Household Members by Age Group</h4>
+            <h3 class="immediate_subheader">👪 Household Members by Age Group</h3>
 
             <label>
                 Under 5 years old:
@@ -75,7 +75,7 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
             </label>
             <br />
 
-            <h4>⚠️ Additional Considerations</h4>
+            <h3 class="immediate_subheader">⚠️ Additional Considerations</h3>
             <label>
                 Medical Needs / Disabilities:
                 <select
