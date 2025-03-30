@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import packingListService from './services/packinglist'
 import SituationSelect from './components/SituationSelect'
 import FilteredSupplyList from './components/FilteredSupplyList'
+import StagingButton from './components/StagingButton'
 
 const App = () => {
   const [supplies, setSupplies] = useState([])
@@ -19,7 +20,8 @@ const App = () => {
     over18: 0,
     medical_needs: false,
     has_pets: false
-  });
+  })
+  const [stage, setStage] = useState("user_setup")
   const [mode, setMode] = useState(null)
 
   useEffect(() => {
@@ -58,8 +60,9 @@ const App = () => {
         <button class="mode_button" onClick={() => {console.log("prepare"); setMode("prepare")}}>Non-Urgent Preparation</button>
         <button class="mode_button" onClick={() => {console.log("education"); setMode("education")}}>Educational</button>
       </div>
-      <SituationSelect mode={mode} situParams={situParams} editParam={editParam} />
-      <FilteredSupplyList mode={mode} situParams={situParams} supplies={supplies} toggleSupplyAvail={toggleSupplyAvail}/>
+      <SituationSelect stage={stage} mode={mode} situParams={situParams} editParam={editParam} />
+      <StagingButton stage={stage} setStage={setStage} mode={mode} />
+      <FilteredSupplyList stage={stage} mode={mode} situParams={situParams} supplies={supplies} toggleSupplyAvail={toggleSupplyAvail}/>
     </div>
   )
 }

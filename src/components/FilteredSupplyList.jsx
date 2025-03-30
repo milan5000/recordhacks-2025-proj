@@ -1,4 +1,6 @@
-const FilteredSupplyList = ({ mode, situParams, supplies, toggleSupplyAvail }) => {
+const FilteredSupplyList = ({ stage, mode, situParams, supplies, toggleSupplyAvail }) => {
+    if (stage !== "checklist") return null;
+
     if (mode === null) {
         return null
     } else if (mode !== "disaster") {

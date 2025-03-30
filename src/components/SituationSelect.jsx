@@ -1,4 +1,6 @@
-const SituationSelect = ({ mode, situParams, editParam }) => {
+const SituationSelect = ({ stage, mode, situParams, editParam }) => {
+    if (stage !== "user_setup") return null;
+
     const handleAgeGroupChange = (field, value) => {
         const num = parseInt(value) || 0;
         editParam(field, num);
