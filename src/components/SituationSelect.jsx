@@ -15,18 +15,21 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
         <div class="immediate_div">
             <h3 class="immediate_subheader">🌪️ Emergency Situation</h3>
             <div class="immediate_dropdowns">
-                <label>
-                    Type of Natural Disaster:
-                    <select value={situParams.disaster_type} onChange={(e) => editParam("disaster_type", e.target.value)}>
-                        <option value="">Select</option>
-                        <option value="earthquake">Earthquake</option>
-                        <option value="hurricane">Hurricane</option>
-                        <option value="wildfire">Wildfire</option>
-                        <option value="flood">Flood</option>
-                        <option value="tornado">Tornado</option>
-                        <option value="winter_storm">Winter Storm</option>
-                    </select>
-                </label>
+                <div class="custom-select">
+                    <label>
+                        Type of Natural Disaster:
+                        <select value={situParams.disaster_type} onChange={(e) => editParam("disaster_type", e.target.value)}>
+                            <option value="">Select</option>
+                            <option value="earthquake">Earthquake</option>
+                            <option value="hurricane">Hurricane</option>
+                            <option value="wildfire">Wildfire</option>
+                            <option value="flood">Flood</option>
+                            <option value="tornado">Tornado</option>
+                            <option value="winter_storm">Winter Storm</option>
+                        </select>
+                    </label>
+                </div>
+                
                 <br />
                 <label>
                     Time Frame:
