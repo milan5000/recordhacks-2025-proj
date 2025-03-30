@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import packingListService from './services/packinglist'
 import SituationSelect from './components/SituationSelect'
+import FilteredSupplyList from './components/FilteredSupplyList'
 
 const App = () => {
   const [supplies, setSupplies] = useState([])
