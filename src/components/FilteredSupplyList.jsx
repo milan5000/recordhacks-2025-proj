@@ -6,14 +6,43 @@ const FilteredSupplyList = ({ mode, situParams, supplies, toggleSupplyAvail }) =
     } else if (mode === "disaster") {
         let suppliesToReturn = structuredClone(supplies).filter((supply) => supply.list === 'essential')
         //console.log(suppliesToReturn)
-        if (situParams.disaster_type === "hurricane" || situParams.disaster_type === "flood") {
-            //console.log("changed to hurrflood")
-            suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'hurricane_flood'))
-            //console.log(supplies.filter((supply) => supply.list === 'hurricane_flood'))
-            //console.log(suppliesToReturn)
-        } else if (situParams.disaster_type === "wildfire") {
-            //console.log("changed to fire")
-            suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'wildfire'))
+        switch (situParams.disaster_type) {
+            case "hurricane":
+            case "flood":
+                suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'hurricane_flood'))
+                break;
+            case "wildfire":
+                suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'wildfire'))
+                break;
+            case "earthquake":
+                suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'earthquake'))
+                break;
+            case "winter_storm":
+                suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'winterstorm_blizzard'))
+                break;
+            case "tornado":
+                suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'tornado'))
+                break;
+            default:
+                break;
+        }
+        if (situParams.medical_needs) {
+            suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'medical_needs'))
+        }
+        if (situParams.has_pets) {
+            suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'pets'))
+        }
+        switch (situParams.time) {
+            case "<1 day":
+            case "<1 week":
+            case "More than 1 week":
+                suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'important_not_urgent'))
+                break;
+            default:
+                break;
+        }
+        if (situParams.under5 > 0) {
+            suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'infant'))
         }
 
         return (
