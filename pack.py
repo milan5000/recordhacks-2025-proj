@@ -2,24 +2,74 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app) # enables CORS for all routes and origins. Should NOT be used in production
+CORS(app)  # Enables CORS for all routes and origins. Should NOT be used in production
 
 PACKING_LIST = {
     "essential": [
         {
-            "id": "1",
+            "id": 'Canned Food',
             "name": 'Canned Food',
-            "available": "true"
+            "available": "true",
+            "list": 'essential',
         },
         {
-            "id": "2",
+            "id": 'Bottled Water',
             "name": 'Bottled Water',
-            "available": "true"
+            "available": "true",
+            "list": 'essential',
         },
         {
-            "id": "3",
+            "id": '$25-100 or more',
             "name": '$25-100 or more',
-            "available": "true"
+            "available": "true",
+            "list": 'essential',
+        }
+    ]
+}
+
+HURRICANE_FLOOD = {
+    "hurricane_flood": [
+        {
+            "id": "Waterproof container for documents",
+            "name": "Waterproof container for documents",
+            "available": "true",
+            "list": "hurricane_flood"
+        },
+        {
+            "id": "Life jackets (for children & non-swimmers)",
+            "name": "Life jackets (for children & non-swimmers)",
+            "available": "true",
+            "list": "hurricane_flood"
+        },
+        {
+            "id": "Plastic bags to keep clothes & supplies dry",
+            "name": "Plastic bags to keep clothes & supplies dry",
+            "available": "true",
+            "list": "hurricane_flood"
+        },
+        {
+            "id": "Paper maps",
+            "name": "Paper maps",
+            "available": "true",
+            "list": "hurricane_flood"
+        },
+        {
+            "id": "Rope (for securing items or rescue situations)",
+            "name": "Rope (for securing items or rescue situations)",
+            "available": "true",
+            "list": "hurricane_flood"
+        },
+        {
+            "id": "Gasoline (fuel car if gas stations closed)",
+            "name": "Gasoline (fuel car if gas stations closed)",
+            "available": "true",
+            "list": "hurricane_flood"
+        },
+        {
+            "id": "Tarps (keeps things dry)",
+            "name": "Tarps (keeps things dry)",
+            "available": "true",
+            "list": "hurricane_flood"
         }
     ]
 }
