@@ -53,7 +53,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div class="main_div">
       <h1>PackAdvisor</h1>
       <div class="mode_buttons_div">
         <button class="mode_button" onClick={() => {console.log("disaster"); setMode("disaster")}}>Immediate Disaster</button>

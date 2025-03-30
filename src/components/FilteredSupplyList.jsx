@@ -48,11 +48,17 @@ const FilteredSupplyList = ({ stage, mode, situParams, supplies, toggleSupplyAva
         }
 
         return (
-            <div>
+            <div class="list_div">
                 {suppliesToReturn.map(supply =>
                 <div key={supply.id}>
-                    {supply.name} {supply.available ? "Available" : "Unavailable"}
-                    <button onClick={() => toggleSupplyAvail(supply.id)}>Change availability (TODO)</button>
+                    <label class="list_labels">
+                        <input class="checkbox_input"
+                            type="checkbox" 
+                            checked={supply.available} 
+                            onChange={() => toggleSupplyAvail(supply.id)}
+                        />
+                        {supply.name} ({supply.available ? "Available" : "Unavailable"})
+                    </label>
                 </div>
                 )}
                 <p>{situParams.disaster_type}</p>

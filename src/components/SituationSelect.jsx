@@ -50,7 +50,7 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
                 <div className="immediate_dropdowns">
                     <label>
                         Under 5 years old:
-                        <input
+                        <input class="number_input"
                             type="number"
                             min="0"
                             value={situParams.under5 || 0}
@@ -61,7 +61,7 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
 
                     <label>
                         Under 13 years old:
-                        <input
+                        <input class="number_input"
                             type="number"
                             min="0"
                             value={situParams.under13 || 0}
@@ -72,7 +72,7 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
 
                     <label>
                         Under 18 years old:
-                        <input
+                        <input class="number_input"
                             type="number"
                             min="0"
                             value={situParams.under18 || 0}
@@ -83,7 +83,7 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
 
                     <label>
                         Over 18 years old:
-                        <input
+                        <input class="number_input"
                             type="number"
                             min="0"
                             value={situParams.over18 || 0}
