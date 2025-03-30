@@ -10,8 +10,8 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
     console.log(JSON.stringify(situParams, null, 2))
 
     return (
-        <div>
-            <h3>🌪️ Emergency Situation</h3>
+        <div class="immediate_div">
+            <h3 calss="emergency_header">🌪️ Emergency Situation</h3>
             <label>
                 Type of Natural Disaster:
                 <select value={situParams.disaster_type} onChange={(e) => editParam("disaster_type", e.target.value)}>

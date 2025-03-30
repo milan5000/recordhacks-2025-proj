@@ -53,3 +53,11 @@ h1 {
     -webkit-user-select: none;
     touch-action: manipulation;
 }
+
+.emergency_header{
+    text-align: center;
+}
+
+.immediate_div {
+
+}
