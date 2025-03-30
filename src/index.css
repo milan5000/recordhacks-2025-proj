@@ -138,3 +138,31 @@ select, .number_input {
 .education_div li {
     margin-bottom: 0.5rem;
 }
+.prepare_div {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.detect_location_button {
+    background-color: #3182ce;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.detect_location_button:hover {
+    background-color: #2b6cb0;
+}
+

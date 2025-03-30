@@ -4,20 +4,37 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
         editParam(field, num);
     };
 
+    const detectHazards = () => {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                fetch(`http://localhost:5000/location-hazards?lat=${latitude}&lon=${longitude}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        alert(`📍 You're in ${data.state}. Common disasters here: ${data.disasters.join(", ")}`);
+                    })
+                    .catch(err => {
+                        console.error("Error fetching hazard data:", err);
+                        alert("There are no disasters currently in your area.");
+                    });
+            },
+            (error) => {
+                alert("Geolocation error: " + error.message);
+            }
+        );
+    };
+
     if (mode === "disaster") {
         if (stage !== "user_setup") return null;
 
         console.log("Current input state:")
         console.log(JSON.stringify(situParams, null, 2));
 
-        console.log("Current input state:")
-        console.log(JSON.stringify(situParams, null, 2))
-
         return (
-            <div class="immediate_div">
-                <h3 class="immediate_subheader">🌪️ Emergency Situation</h3>
-                <div class="immediate_dropdowns">
-                    <div class="custom-select">
+            <div className="immediate_div">
+                <h3 className="immediate_subheader">🌪️ Emergency Situation</h3>
+                <div className="immediate_dropdowns">
+                    <div className="custom-select">
                         <label>
                             Type of Natural Disaster:
                             <select value={situParams.disaster_type} onChange={(e) => editParam("disaster_type", e.target.value)}>
@@ -50,45 +67,25 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
                     <div className="immediate_dropdowns">
                         <label>
                             Under 5 years old:
-                            <input class="number_input"
-                                type="number"
-                                min="0"
-                                value={situParams.under5 || 0}
-                                onChange={(e) => handleAgeGroupChange("under5", e.target.value)}
-                            />
+                            <input className="number_input" type="number" min="0" value={situParams.under5 || 0} onChange={(e) => handleAgeGroupChange("under5", e.target.value)} />
                         </label>
                         <br />
 
                         <label>
                             Under 13 years old:
-                            <input class="number_input"
-                                type="number"
-                                min="0"
-                                value={situParams.under13 || 0}
-                                onChange={(e) => handleAgeGroupChange("under13", e.target.value)}
-                            />
+                            <input className="number_input" type="number" min="0" value={situParams.under13 || 0} onChange={(e) => handleAgeGroupChange("under13", e.target.value)} />
                         </label>
                         <br />
 
                         <label>
                             Under 18 years old:
-                            <input class="number_input"
-                                type="number"
-                                min="0"
-                                value={situParams.under18 || 0}
-                                onChange={(e) => handleAgeGroupChange("under18", e.target.value)}
-                            />
+                            <input className="number_input" type="number" min="0" value={situParams.under18 || 0} onChange={(e) => handleAgeGroupChange("under18", e.target.value)} />
                         </label>
                         <br />
 
                         <label>
                             Over 18 years old:
-                            <input class="number_input"
-                                type="number"
-                                min="0"
-                                value={situParams.over18 || 0}
-                                onChange={(e) => handleAgeGroupChange("over18", e.target.value)}
-                            />
+                            <input className="number_input" type="number" min="0" value={situParams.over18 || 0} onChange={(e) => handleAgeGroupChange("over18", e.target.value)} />
                         </label>
                         <br />
                     </div>
@@ -97,10 +94,7 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
                     <div className="immediate_dropdowns">
                         <label>
                             Medical Needs / Disabilities:
-                            <select
-                                value={situParams.medical_needs ? "yes" : "no"}
-                                onChange={(e) => editParam("medical_needs", e.target.value === "yes")}
-                            >
+                            <select value={situParams.medical_needs ? "yes" : "no"} onChange={(e) => editParam("medical_needs", e.target.value === "yes")}>
                                 <option value="">Select</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -110,10 +104,7 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
 
                         <label>
                             Pets:
-                            <select
-                                value={situParams.has_pets ? "yes" : "no"}
-                                onChange={(e) => editParam("has_pets", e.target.value === "yes")}
-                            >
+                            <select value={situParams.has_pets ? "yes" : "no"} onChange={(e) => editParam("has_pets", e.target.value === "yes")}>
                                 <option value="">Select</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -121,6 +112,19 @@ const SituationSelect = ({ stage, mode, situParams, editParam }) => {
                         </label>
                     </div>
                 </div>
+            </div>
+        );
+    } else if (mode === "prepare") {
+        return (
+            <div className="prepare_div section">
+                <h3>🧭 Current Location</h3>
+                <p>Is there a disaster near your area?</p>
+
+                <button className="detect_location_button" onClick={detectHazards}>
+                    📍 Detect My Location
+                </button>
+
+                
             </div>
         );
     } else if (mode === "education") {
