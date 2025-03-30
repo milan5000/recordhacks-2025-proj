@@ -1,7 +1,7 @@
 h1 {
     display: flex;
     justify-content: center;
-    color: green;
+    color: red;
     font-style: italic;
     font-size: 50px;
 }
