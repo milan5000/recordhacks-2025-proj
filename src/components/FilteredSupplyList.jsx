@@ -5,10 +5,15 @@ const FilteredSupplyList = ({ mode, situParams, supplies, toggleSupplyAvail }) =
         return <div></div> // currently unimplemented
     } else if (mode === "disaster") {
         let suppliesToReturn = structuredClone(supplies).filter((supply) => supply.list === 'essential')
+        //console.log(suppliesToReturn)
         if (situParams.disaster_type === "hurricane" || situParams.disaster_type === "flood") {
-            suppliesToReturn.concat(supplies.filter((supply) => supply.list === 'hurricane_flood'))
+            //console.log("changed to hurrflood")
+            suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'hurricane_flood'))
+            //console.log(supplies.filter((supply) => supply.list === 'hurricane_flood'))
+            //console.log(suppliesToReturn)
         } else if (situParams.disaster_type === "wildfire") {
-            suppliesToReturn.concat(supplies.filter((supply) => supply.list === 'wildfire'))
+            //console.log("changed to fire")
+            suppliesToReturn.push(... supplies.filter((supply) => supply.list === 'wildfire'))
         }
 
         return (

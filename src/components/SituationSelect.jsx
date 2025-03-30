@@ -6,6 +6,9 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
 
     if (mode !== "disaster") return null;
 
+    console.log("Current input state:")
+    console.log(JSON.stringify(situParams, null, 2))
+
     return (
         <div>
             <label>
@@ -107,9 +110,9 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
                 </select>
             </label>
 
-            <hr />
+            {/* <hr />
             <p>Current Input State:</p>
-            <pre>{JSON.stringify(situParams, null, 2)}</pre>
+            <pre>{JSON.stringify(situParams, null, 2)}</pre> */}
         </div>
     );
 };
