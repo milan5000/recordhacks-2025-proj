@@ -10,7 +10,8 @@ const App = () => {
     first_aid_kit: true
   })
   const [situParams, setSituParams] = useState({
-    disaster_type: null
+    disaster_type: null,
+    amogus: "sus"
   })
   const [mode, setMode] = useState(null)
 
@@ -38,7 +39,7 @@ const App = () => {
         <button onClick={() => {console.log("prepare"); setMode("prepare")}}>Non-Urgent Preparation</button>
         <button onClick={() => {console.log("education"); setMode("education")}}>Educational</button>
       </div>
-      <SituationSelect mode={mode} editParam={() => editParam(arg, val)} />
+      <SituationSelect mode={mode} situParams={situParams} editParam={editParam} />
       <div>
         {supplies.map(supply =>
           <div key={supply.id}>

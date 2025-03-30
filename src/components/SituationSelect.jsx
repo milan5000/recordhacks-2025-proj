@@ -1,10 +1,12 @@
-const SituationSelect = ({ mode }) => {
+const SituationSelect = ({ mode, situParams, editParam }) => {
     if (mode === null) {
         return null
     } else if (mode === "disaster") {
         return (
             <div>
-                <p>Checkboxes here please</p>
+                <p>The impostor is {situParams.amogus}!</p>
+                <button onClick={() => editParam("amogus", "not sus")}>click to make the impostor not sus</button>
+                <button onClick={() => editParam("amogus", "sus")}>click to make the impostor sus</button>
             </div>
         )
     } else if (mode === "prepare") {
