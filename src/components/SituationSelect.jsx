@@ -11,6 +11,7 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
 
     return (
         <div>
+            <h3>🌪️ Emergency Situation</h3>
             <label>
                 Type of Natural Disaster:
                 <select value={situParams.disaster_type} onChange={(e) => editParam("disaster_type", e.target.value)}>
@@ -39,7 +40,7 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
             </label>
             <br />
 
-            <h4>Household Members by Age Group</h4>
+            <h4>👪 Household Members by Age Group</h4>
 
             <label>
                 Under 5 years old:
@@ -48,17 +49,6 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
                     min="0"
                     value={situParams.under5 || 0}
                     onChange={(e) => handleAgeGroupChange("under5", e.target.value)}
-                />
-            </label>
-            <br />
-
-            <label>
-                Under 13 years old:
-                <input
-                    type="number"
-                    min="0"
-                    value={situParams.under13 || 0}
-                    onChange={(e) => handleAgeGroupChange("under13", e.target.value)}
                 />
             </label>
             <br />
@@ -85,6 +75,7 @@ const SituationSelect = ({ mode, situParams, editParam }) => {
             </label>
             <br />
 
+            <h4>⚠️ Additional Considerations</h4>
             <label>
                 Medical Needs / Disabilities:
                 <select
