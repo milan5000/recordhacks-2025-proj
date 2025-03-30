@@ -11,9 +11,15 @@ const App = () => {
     first_aid_kit: true
   })
   const [situParams, setSituParams] = useState({
-    disaster_type: null,
-    amogus: "sus"
-  })
+    disaster_type: "",
+    time: "",
+    under5: 0,
+    under13: 0,
+    under18: 0,
+    over18: 0,
+    medical_needs: false,
+    has_pets: false
+  });
   const [mode, setMode] = useState(null)
 
   useEffect(() => {
