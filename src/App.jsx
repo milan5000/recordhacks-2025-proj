@@ -41,14 +41,7 @@ const App = () => {
         <button onClick={() => {console.log("education"); setMode("education")}}>Educational</button>
       </div>
       <SituationSelect mode={mode} situParams={situParams} editParam={editParam} />
-      <div>
-        {supplies.map(supply =>
-          <div key={supply.id}>
-            {supply.name} {supply.available ? "Available" : "Unavailable"}
-            <button>Change availability (TODO)</button>
-          </div>
-        )}
-      </div>
+      <FilteredSupplyList mode={mode} situParams={situParams} />
     </div>
   )
 }
