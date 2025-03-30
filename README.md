@@ -24,6 +24,8 @@ PackAdvisor is designed for multiple common emergency situations, including:
 
 PackAdvisor also adjusts supplies for users with families including pets and/or children.
 
+Both the non-urgent planning and education modes contain more detailed information on all of these disaster situations as well.
+
 ### About the App
 
 The developers for this app were Daniel Milan, Pranav Dodda, Aaron Xu, and Caleb Pham. This app was originally developed for the **Record Hacks** Spring 2025 hackathon, run by Freetail Hackers and held at the University of Texas at Austin. Licensing details can be found in the LICENSE file. Contact Daniel Milan (milan5000 on GitHub) for more information.
