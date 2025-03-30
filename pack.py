@@ -5,8 +5,8 @@ app = Flask(__name__)
 CORS(app)  # Enables CORS for all routes and origins. Should NOT be used in production
 
 PACKING_LIST = {
-    "essential": [
-        {
+    "packing_list": [
+        { # essential
             "id": 'Canned Food',
             "name": 'Canned Food',
             "available": "true",
@@ -23,13 +23,8 @@ PACKING_LIST = {
             "name": '$25-100 or more',
             "available": "true",
             "list": 'essential',
-        }
-    ]
-}
-
-INFANT = {
-    "infant": [
-        {
+        },
+        { # infant
             "id": "Baby formula (3-day supply)",
             "name": "Baby formula (3-day supply)",
             "available": "true",
@@ -64,13 +59,8 @@ INFANT = {
             "name": "Comfort item (toy, blanket)",
             "available": "true",
             "list": "infant"
-        }
-    ]
-}
-
-MEDICAL_NEEDS = {
-    "medical_needs": [
-        {
+        },
+        { # medical needs
             "id": "Extra prescription medications (7-day supply)",
             "name": "Extra prescription medications (7-day supply)",
             "available": "true",
@@ -87,13 +77,8 @@ MEDICAL_NEEDS = {
             "name": "Epinephrine auto-injector (if needed)",
             "available": "true",
             "list": "medical_needs"
-        }
-    ]
-}
-
-PETS = {
-    "pets": [
-        {
+        },
+        { # pets
             "id": "Pet food",
             "name": "Pet food",
             "available": "true",
@@ -122,13 +107,8 @@ PETS = {
             "name": "Vaccination records & ID tag",
             "available": "true",
             "list": "pets"
-        }
-    ]
-}
-
-HURRICANE_FLOOD = {
-    "hurricane_flood": [
-        {
+        },
+        { # hurricane_flood
             "id": "Waterproof container for documents",
             "name": "Waterproof container for documents",
             "available": "true",
@@ -169,13 +149,8 @@ HURRICANE_FLOOD = {
             "name": "Tarps (keeps things dry)",
             "available": "true",
             "list": "hurricane_flood"
-        }
-    ]
-}
-
-TORNADO = {
-    "tornado": [
-        {
+        },
+        { # tornado
             "id": "Bike helmet (to protect head from flying objects)",
             "name": "Bike helmet (to protect head from flying objects)",
             "available": "true",
@@ -204,13 +179,8 @@ TORNADO = {
             "name": "Paper maps (if evacuating)",
             "available": "true",
             "list": "tornado"
-        }
-    ]
-}
-
-EARTHQUAKE = {
-    "earthquake": [
-        {
+        },
+        { # earthquake
             "id": "Bike helmet (to protect head from falling objects)",
             "name": "Bike helmet (to protect head from falling objects)",
             "available": "true",
@@ -227,13 +197,8 @@ EARTHQUAKE = {
             "name": "N95 masks (in-case trapped under debris)",
             "available": "true",
             "list": "earthquake"
-        }
-    ]
-}
-
-WILDFIRE = {
-    "wildfire": [
-        {
+        },
+        { # wildfire
             "id": "N95 masks (in-case poor air quality)",
             "name": "N95 masks (in-case poor air quality)",
             "available": "true",
@@ -256,13 +221,8 @@ WILDFIRE = {
             "name": "Paper maps",
             "available": "true",
             "list": "wildfire"
-        }
-    ]
-}
-
-WINTERSTORM_BLIZZARD = {
-    "winterstorm_blizzard": [
-        {
+        },
+        { # winterstorm_blizzard
             "id": "Extra blankets and sleeping bags",
             "name": "Extra blankets and sleeping bags",
             "available": "true",
@@ -303,13 +263,8 @@ WINTERSTORM_BLIZZARD = {
             "name": "Tow rope (for car)",
             "available": "true",
             "list": "winterstorm_blizzard"
-        }
-    ]
-}
-
-IMPORTANT_NOT_URGENT = {
-    "important_not_urgent": [
-        {
+        },
+        { # important_not_urgent
             "id": "Can opener",
             "name": "Can opener",
             "available": "true",
@@ -347,8 +302,6 @@ IMPORTANT_NOT_URGENT = {
         }
     ]
 }
-
-
 
 @app.route('/')
 def home():
