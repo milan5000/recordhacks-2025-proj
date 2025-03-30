@@ -1,22 +1,26 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app) # enables CORS for all routes and origins. Should NOT be used in production
 
 PACKING_LIST = {
     "essential": [
-        "Water (1 gallon per person per day, 3-day supply)",
-        "Non-perishable food (3-day supply)",
-        "Flashlight with extra batteries",
-        "Battery-powered or hand crank radio (NOAA weather alerts)",
-        "First aid kit (bandages, antiseptic, gloves, etc.)",
-        "Prescription medications and medical supplies",
-        "Whistle to signal for help",
-        "Multi-tool or Swiss Army knife",
-        "ID and important documents",
-        "Phone charger & power bank",
-        "Emergency blanket or sleeping bag",
-        "Toothbrush, toothpaste, soap, and hygiene supplies"
+        {
+            "id": "1",
+            "name": 'Canned Food',
+            "available": "true"
+        },
+        {
+            "id": "2",
+            "name": 'Bottled Water',
+            "available": "true"
+        },
+        {
+            "id": "3",
+            "name": '$25-100 or more',
+            "available": "true"
+        }
     ]
 }
 
