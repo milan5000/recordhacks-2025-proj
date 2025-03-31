@@ -1,6 +1,6 @@
 # PackAdvisor
 
-*Originally developed for the* ***Record Hacks*** *Spring 2025 hackathon, run by Freetail Hackers and held at the University of Texas at Austin.*
+*Originally developed for the* ***Record Hacks*** *Spring 2025 hackathon, run by Freetail Hackers and held at the University of Texas at Austin. This software is not an official emergency preparedness guide and is not affiliated with, endorsed by, or sponsored by FEMA, NOAA, or any government agency. We do not guarantee the completeness, accuracy, or suitability of the suggested supplies for every individual or situation. By using this app, you acknowledge that you do so at your own risk and that the developers are not liable for any direct, indirect, incidental, or consequential damages arising from its use.*
 
 PackAdvisor is an app designed to help people gather adequate supplies for evacuation in an emergency.
 
@@ -29,16 +29,6 @@ Both the non-urgent planning and education modes contain more detailed informati
 ### About the App
 
 The developers for this app were Daniel Milan, Pranav Dodda, Aaron Xu, and Caleb Pham. This app was originally developed for the **Record Hacks** Spring 2025 hackathon, run by Freetail Hackers and held at the University of Texas at Austin. Licensing details can be found in the LICENSE file. Contact Daniel Milan (milan5000 on GitHub) for more information.
-
-##### Legal Disclaimer
-
-*This software is provided as a tool to assist users in assembling emergency kits based on publicly available information and best practices. It is not an official emergency preparedness guide and is not affiliated with, endorsed by, or sponsored by FEMA, NOAA, or any government agency.*
-
-*The recommendations provided by this app are intended for informational purposes only and should not be relied upon as a sole source of emergency preparedness planning. We do not guarantee the completeness, accuracy, or suitability of the suggested supplies for every individual or situation.*
-
-*Users should exercise their own judgment and consult official sources, such as FEMA or the Red Cross, for comprehensive emergency preparedness guidance. The developers assume no responsibility for any consequences resulting from reliance on this application, including but not limited to, incomplete preparedness, missed items, or inaccurate recommendations.*
-
-*By using this app, you acknowledge that you do so at your own risk and that the developers are not liable for any direct, indirect, incidental, or consequential damages arising from its use.*
 
 <!-- 
 # React + Vite
